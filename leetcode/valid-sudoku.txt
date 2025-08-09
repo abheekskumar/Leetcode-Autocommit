@@ -1,0 +1,22 @@
+
+        for r in range(n):
+            for c in range(n):
+
+                val = board[r][c]
+                if val == ".":
+                    continue
+
+
+                box_index = r//3*3 + c//3
+                if ((val in boxSet[box_index]) or (val in colSet[c]) or (val 
+in rowSet[r])):
+                    return False
+
+                boxSet[box_index].add(val)
+                rowSet[r].add(val)
+                colSet[c].add(val)
+        n = len(board)
+
+        boxSet = defaultdict(set)
+
+        return True
