@@ -1,0 +1,19 @@
+        :type t: str
+        :rtype: bool
+        """
+        if len(s) != len(t):
+
+            return False
+        dicts = {}
+        for ch in s:
+            dicts[ch] = 1 + dicts.get(ch,0)
+        
+        for ch in t:
+            if ch in dicts:
+                if dicts[ch] > 0:
+            else:
+                    dicts[ch] -= 1
+                else:
+                    return False
+                return False
+        return True
