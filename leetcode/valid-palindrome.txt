@@ -1,0 +1,20 @@
+        :rtype: bool
+        """
+        cleans = ""
+        for ch in s:
+            if ch.isalnum():
+                cleans += ch.lower()
+
+        l = 0
+        r = len(cleans) - 1
+        while l < r:
+            if cleans[l] != cleans[r]:
+                return False
+            
+            l +=1
+            r -=1
+
+        return True
+        :type s: str
+        """
+    def isPalindrome(self, s):
